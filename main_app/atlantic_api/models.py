@@ -1,11 +1,12 @@
 from django.db import models
 
-# Create your models here.
+# Subscriptions have a one to one relationship with customers.
 class Subscription(models.Model):
   id = models.CharField(max_length = 512, primary_key=True)
   plan_name = models.TextField()
   price = models.IntegerField()
 
+# Customers will be related one to one with subscriptions, using subscriptions as the key to map each relationship.
 class Customers(models.Model):
   id = models.CharField(max_length = 512, primary_key=True)
   first_name = models.CharField(max_length = 100)
@@ -17,6 +18,7 @@ class Customers(models.Model):
   postal_code = models.IntegerField()
   subscription = models.ForeignKey(Subscription, on_delete = models.CASCADE)
   
+ # Gifts have a many to one relationship with customers, using customers as the key to map the relationship. 
 class Gifts(models.Model):
   id = models.CharField(max_length = 512, primary_key=True)
   plan_name = models.TextField()

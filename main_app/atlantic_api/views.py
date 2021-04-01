@@ -27,6 +27,10 @@ class Submit(APIView):
       'message' : 'Successfully Submitted'
     })
 
+# Allows the user to update previous information on an existing customer.
+# The subscription is updated first, in order to be used later to update the customer.
+# Gifts are iterable, so we must check if the gifts being updated are new gifts or old gifts.
+# Use get_object_or_404 to handle cases where we're trying to find a user that doesn't exist.
 class Update(APIView):
   def post(self, request, *args, **kwargs):
     body = json.loads(request.body.decode('utf-8'))
