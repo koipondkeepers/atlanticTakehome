@@ -21,5 +21,5 @@ class Submit(APIView):
     customer.save()
     return JsonResponse({
       'response': 200,
-      'message' : f'succeded'
+      'message' : 'Successfully Submitted'
     })
