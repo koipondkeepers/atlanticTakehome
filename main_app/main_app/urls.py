@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from atlantic_api.views import Submit
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('submit/', Submit.as_view(), name='submit'),
 ]
