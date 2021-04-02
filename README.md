@@ -16,6 +16,7 @@ A simple API built in Django accepting JSON and storing it in a SQLite database 
 - Use postman to send information to the following routes. Make sure in the Body tab of your request, you select `raw` and `JSON` from the dropdown menu.
 	- For submitting: http://127.0.0.1:8000/submit/
 	- For updating: http://127.0.0.1:8000/update/
+	- You can query the tables after each endpoint by running `python manage.py dbshell` and querying the different models
 - You can use the following test case inside the Body tab of your Postman request and adjust accordingly for the route.
 ```
 {
